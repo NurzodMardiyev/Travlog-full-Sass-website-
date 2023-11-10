@@ -1,0 +1,117 @@
+.testemonial {
+  background-image: url(../images/Vector.png);
+  background-position: center top -220px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1440px;
+  margin: auto;
+}
+.testimonial__wrapper {
+  position: relative;
+  
+}
+.testimonial__head {
+  text-align: center;
+  margin-top: 70px;
+  p:first-child {
+    @include text(#F85E9F, 23px, 700, 120%);
+    letter-spacing: 4.6px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h2 {
+    @include text(#191825, 44px, 700, 120%);
+    }
+  }
+
+.testimonial__body {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  justify-content: center;
+  align-items: center;
+  max-width: 872px;
+  margin: 56px auto;
+  text-align: center;
+  padding: 0 30px;
+
+  h3 {
+    @include text(#FF5722, 28px, 700, 120%);
+    span {
+      @include text(rgba(25, 24, 37, 0.75), 23px, 700, 120%);
+    }
+  }
+
+  p {
+    @include text( rgba(25, 24, 37, 0.75), 23px, 450, 160%);
+  }
+}
+.carousel__points {
+  display: flex;
+  gap: 24px;
+
+  span {
+    width: 24px;
+    height: 24px;
+    background-color:rgba(25, 24, 37, 0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    &:nth-child(2) {
+      background-color: #F85E9F;
+    }
+  }
+}
+.testimonial__btns {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: calc( 50% - 50px);
+  left: 0;
+  width: 100%;
+
+  & > div {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  .btn-right {
+    background-color: #5D50C6;
+  }
+  .btn-left {
+    background-color: #fff;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .testemonial {
+    background-position: center top;
+  }
+  .testimonial__btns {
+    padding: 0 20px;
+  }
+  .testimonial__head {
+    h2 {
+      @include text(#191825, 40px, 700, 120%);
+      }
+    }
+}
+@media screen and (max-width: 767px) {
+  .testemonial {
+    background: none;
+  }
+  .testimonial__btns {
+    padding: 0 20px;
+    top: 100%;
+  }
+  .testimonial__head {
+    p:first-child {
+      @include text(#F85E9F, 16px, 700, 120%);
+    }
+    h2 {
+      @include text(#191825, 32px, 700, 120%);
+      }
+    }
+}

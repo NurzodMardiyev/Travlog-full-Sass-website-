@@ -1,0 +1,33 @@
+.sponsor__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin: 64px auto;
+  flex-wrap: wrap;
+ 
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .sponsor__wrapper {
+    margin-top: 500px;
+    justify-content: space-around;
+    img {
+      margin-top: 20px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .sponsor__wrapper {
+    margin-top: 500px;
+    justify-content: space-around;
+    img {
+      margin-top: 20px;
+    }
+  }
+}

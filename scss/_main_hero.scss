@@ -1,0 +1,186 @@
+#main {
+  z-index: 99;
+}
+.hero__wrapper {
+  display: flex;
+  margin: 32px auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero__wrapper::after,
+.hero__wrapper::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+}
+.Explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.07), 0px 34px 75px 0px rgba(0, 0, 0, 0.07), 0px 137px 137px 0px rgba(0, 0, 0, 0.06), 0px 308px 185px 0px rgba(0, 0, 0, 0.04), 0px 548px 219px 0px rgba(0, 0, 0, 0.01), 0px 856px 240px 0px rgba(0, 0, 0, 0.00);
+  transition: all .3s ease;
+  @include button(16px 32px, #fff, #F85E9F, #fff, 2px, 100px);
+  a {
+    color: #F85E9F;
+    font-size: 14px;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  &:active {
+    @include button(16px 32px, #F85E9F, #fff, #F85E9F, 1px, 100px);
+    a {
+      color: #fff;
+    }
+    img {
+      filter: brightness(20);
+    }
+  }
+  &:hover {
+    @include button(16px 32px, #fff, #F85E9F, #F85E9F, 1px, 100px);
+    a {
+      color: #F85E9F;
+    }
+  }
+}
+
+.hero__h1 {
+  @include text(#000, 69px, 700, 120%);
+  span {
+    color: #F85E9F;
+  }
+}
+.hero__p {
+  @include text(rgba(25, 24, 37, 0.50), 18px, 400, 160%);
+}
+.hero__btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all .3s ease;
+
+  & button {
+    @include button(16px 32px, #5D50C6, #fff, #5D50C6, 1px, 100px);
+    cursor:pointer;
+    a {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+  & .GetBtn {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 5px 11px 0px rgba(0, 0, 0, 0.10), 0px 20px 20px 0px rgba(0, 0, 0, 0.09), 0px 45px 27px 0px rgba(0, 0, 0, 0.05), 0px 81px 32px 0px rgba(0, 0, 0, 0.01), 0px 126px 35px 0px rgba(0, 0, 0, 0.00);
+    transition: all .3s ease;
+    &:hover {
+      @include button(16px 32px, #fff, #5D50C6, #5D50C6, 1px, 100px);
+      a {
+        color: #5D50C6;
+      }
+    }
+  }
+  
+  & .WatchBtn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all .3s ease;
+    @include button(13px 32px, #fff, #222831, #EEE, 1px, 100px);
+
+    & a {
+      @include text(#222831, 13px, 700, 120%);
+    }
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+    &:hover {
+      @include button(13px 32px, #fff, #5D50C6, #5D50C6, 1px, 100px);
+      a {
+        @include text(#5D50C6, 13px, 700, 120%);
+      }
+    }
+  }
+}
+
+.hero__image {
+  max-width: 750px;
+  z-index: 1;
+  position: relative;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero__wrapper {
+    // flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    // float: right;
+  }
+  .hero__info {
+    position: absolute;
+    top: 800px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hero__image {
+    display: flex;
+    justify-content: center;
+  }
+  .hero__h1 {
+    max-width: 630px;
+    @include text(#000, 56px, 700, 120%);
+
+    span {
+      color: #F85E9F;
+    }
+  }
+  .hero__p {
+    @include text(rgba(25, 24, 37, 0.50), 18px, 400, 160%);
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero__wrapper {
+    // flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    // float: right;
+  }
+  .hero__info {
+    position: absolute;
+    top: 400px;
+    align-items: center;
+    text-align: center;
+    max-width: 450px;
+    gap: 24px;
+  }
+  .hero__image {
+    max-width: 396px;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
+  .hero__h1 {
+    @include text(#000, 40px, 700, 120%);
+    span {
+      color: #F85E9F;
+    }
+  }
+  .hero__p {
+    @include text(rgba(25, 24, 37, 0.50), 16px, 400, 160%);
+  }
+  .hero__btns {
+    flex-direction: column;
+
+    button {
+      @include button(16px 40px, #5D50C6, #fff, #5D50C6, 1px, 100px);
+    }
+  }
+}

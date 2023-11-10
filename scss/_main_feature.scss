@@ -1,0 +1,115 @@
+.feature__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  justify-content: space-between;
+  margin-top: 128px;
+}
+.feature__info-head {
+  p:first-child {
+    @include text(#F85E9F, 23px, 700, 120%);
+    letter-spacing: 4.6px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h2 {
+    @include text(#191825, 44px, 700, 120%);
+  }
+  p:nth-child(3) {
+    @include text(rgba(25, 24, 37, 0.50), 18px, 400, 160%);
+    margin-top: 32px;
+  }
+}
+.feature__info-body {
+  display: flex;
+  flex-direction: column;  
+  margin-top: 64px;
+}
+.info__box {
+  display: flex;
+  align-items: center;
+  padding: 32px;
+  border: 1px solid #fff;
+  gap: 18px;
+  border-radius: 32px;
+  &:hover {
+    border: 1px solid rgba(25, 24, 37, 0.10);
+
+  }
+  .info__box-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 32px;
+    background-color: #FF5722;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .calendar {
+    background-color: #FACD49;
+  }
+  .ticket {
+    background-color: #F85E9F;
+  }
+
+  .info__box-info {
+    h4 {
+      @include text(#191825, 23px, 700, 120%);
+    }
+    p {
+      @include text(rgba(25, 24, 37, 0.50), 18px, 400, 160%);
+      margin-top: 8px;
+    }
+  }
+}
+.feature__img {
+  max-width: 1000px;
+  img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .feature__wrapper {
+    
+    align-items: center;
+    gap: 70px;
+    margin-top: 128px;
+    flex-direction: column-reverse;
+
+  }
+  .feature__info-head {
+    text-align: center;
+    h2 {
+      @include text(#191825, 40px, 700, 120%);
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .feature__wrapper {
+    align-items: center;
+    gap:  64px;
+    margin-top: 128px;
+    flex-direction: column-reverse;
+
+  }
+  .feature__info-head {
+    text-align: center;
+    padding: 0 20px;
+    p:first-child {
+      @include text(#F85E9F, 16px, 700, 120%);
+    }
+    h2 {
+      @include text(#191825, 32px, 700, 120%);
+    }
+    p:nth-child(3) {
+      @include text(rgba(25, 24, 37, 0.50), 16px, 400, 160%);
+    }
+  }
+  .feature__info-body { 
+    margin-top: 32px;
+  }
+  .info__box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,126 @@
+.travel__wrapper {
+  margin: auto;
+}
+.travel__container {
+  max-width: 1184px + 128px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+}
+.travel__img {
+  max-width: 871px;
+  img {
+    width: 100%;
+    margin-left: -20px;
+  }
+}
+.travel__info-item {
+  max-width: 480px;
+
+  p:first-child {
+    @include text(#F85E9F, 23px, 700, 120%);
+    letter-spacing: 4.6px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h2 {
+    @include text(#191825, 44px, 700, 120%);
+    max-width: 430px;
+  }
+  p:nth-child(3) {
+    @include text(rgba(25, 24, 37, 0.50), 18px, 400, 160%);
+    margin-top: 32px;
+  }
+}
+.box-items {
+  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  gap: 32px;
+}
+.box-item {
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 140px;
+  text-align: center;
+  border: 1px solid rgba(25, 24, 37, 0.10);
+
+  span {
+    @include text(#FF5722, 35px, 700,  120%);
+  }
+  p {
+    @include text(#191825, 18px, 400, 160%);
+    font-family: Inter;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .travel__container {
+    max-width: 896px;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+.travel__info {
+  margin-top: 64px;
+}
+.travel__img {
+  width: 100%;
+  img {
+    margin: auto;
+  }
+}
+.travel__info-item {
+  max-width: 680px;
+  text-align: center;
+  justify-content: center;
+  h2 {
+    @include text(#191825, 40px, 700, 120%);
+    max-width: 100%;
+  }
+}
+.box-items  {
+  justify-content: center;
+}
+.box-item {
+  width: 320px;
+  height: 140px;
+}
+
+}
+@media screen and (max-width: 767px) {
+  .travel__container {
+    flex-direction: column;
+    max-width: 398px;
+    margin: auto;
+  }
+  
+  .travel__info {
+    margin-top: 32px;
+  }
+.travel__info-item {
+  text-align: center;
+  p:first-child {
+    @include text(#F85E9F, 16px, 700, 120%);
+  }
+  h2 {
+    @include text(#191825, 32px, 700, 120%);
+  }
+  p:nth-child(3) {
+    @include text(rgba(25, 24, 37, 0.50), 16px, 400, 160%);
+    margin-top: 32px;
+  }
+}
+.box-item {
+  width: 334px;
+  height: 140px;
+  margin: auto;
+}
+.box-items {
+  margin-top: 32px;
+}
+}

@@ -1,0 +1,155 @@
+
+#header {
+  width: 100%;
+  z-index: 99;
+}
+.navbar__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px auto;
+}
+.nav__logo {
+  max-width: 142px;
+  img {
+    width: 100%;
+  }
+}
+#menu {
+  cursor: pointer;
+  display: none; //Flex
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#triggle {
+  display: none;
+}
+
+.nav__menu {
+  display: flex;
+  gap: 64px;
+  transition: all 1s ease;
+  z-index: 99999;
+  & li:first-child a {
+    color: #222831;
+  }
+  
+  & a {
+    @include text(rgba(25, 24, 37, 0.50), 14px, 700, 120%);
+    transition: all .3s ease;
+
+    &:hover {
+      color: #222831;
+    }
+  }
+}
+.login__btns {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  & a {
+    @include text(#222831, 14px, 700, auto);
+  }
+
+  & .SignUp {
+    @include button(16px 32px, #5D50C6, #fff, #5D50C6, 1px, 100px);
+    letter-spacing: 1.5px;
+    transition: all .3s ease;
+
+    &:hover {
+      @include button(16px 32px, #fff, #5D50C6, #5D50C6, 1px, 100px);
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar__wrapper {
+    max-width: 896px;
+    margin: 32px auto;
+  }
+  #menu {
+    display: flex;
+    z-index: 999;
+  }
+  
+  .nav__menu {
+    transform: translateX(0%);
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(196, 196, 196, 0.9);
+    position: absolute;
+    width: 40%;
+    height: 100vh;
+    padding: 120px 25px 0;
+    left: 0;
+    top: 0;
+    transform: translateX(0%);
+    transition: all .3s ease;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 99;
+
+    li {
+      border-bottom: 1px solid #fff;
+      width: 100%;
+      a {
+      font-size: 24px;
+    }
+    }
+    
+  }
+  #triggle:checked ~ .nav__menu {
+    transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 767px) {
+  .navbar__wrapper {
+    float: right;
+    margin: 32px auto;
+  }
+  .nav__logo {
+    display: flex;
+    position: absolute;
+    left: 20px;
+  }
+  .login__btns {
+    display: none;
+  }
+  .nav__menu {
+    transform: translateX(0%);
+    flex-direction: column;
+    align-items: flex-start;
+    background-color:rgba(196, 196, 196, 0.9);
+    position: absolute;
+    width: 60%;
+    height: 100vh;
+    padding: 120px 25px 0;
+    left: 0;
+    top: 0;
+    transform: translateX(0%);
+    transition: all .3s ease;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    li {
+      border-bottom: 1px solid #fff;
+      width: 100%;
+      a {
+      font-size: 24px;
+    }
+    }
+  }
+  #menu {
+    display: flex;
+    z-index: 999;
+  }
+  #triggle:checked ~ .nav__menu {
+    transform: translateX(-100%);
+  }
+}
